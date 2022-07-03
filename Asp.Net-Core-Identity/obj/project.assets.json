@@ -7667,11 +7667,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\emrah\\source\\repos\\Asp.Net-Core-5-Identity\\Asp.Net-Core-Identity\\Asp.Net-Core-Identity.csproj",
+      "projectUniqueName": "C:\\Users\\emrah\\source\\repos\\Identity\\Asp.Net-Core-5-Identity\\Asp.Net-Core-Identity\\Asp.Net-Core-Identity.csproj",
       "projectName": "Asp.Net-Core-Identity",
-      "projectPath": "C:\\Users\\emrah\\source\\repos\\Asp.Net-Core-5-Identity\\Asp.Net-Core-Identity\\Asp.Net-Core-Identity.csproj",
+      "projectPath": "C:\\Users\\emrah\\source\\repos\\Identity\\Asp.Net-Core-5-Identity\\Asp.Net-Core-Identity\\Asp.Net-Core-Identity.csproj",
       "packagesPath": "C:\\Users\\emrah\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\emrah\\source\\repos\\Asp.Net-Core-5-Identity\\Asp.Net-Core-Identity\\obj\\",
+      "outputPath": "C:\\Users\\emrah\\source\\repos\\Identity\\Asp.Net-Core-5-Identity\\Asp.Net-Core-Identity\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\emrah\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7759,7 +7759,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

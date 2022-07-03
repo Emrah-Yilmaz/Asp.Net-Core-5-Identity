@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eCbiBtQgSNpit8i/H0PMhcfkQj1xQQtjQad5dYH7n35ia7VQRdxl3eo7hlc4u9onvG3CxOA+TM/27PAIP7qMqQ==",
+  "dgSpecHash": "5SS/oeuT+gq5mP763qmnes6pzB5ZAlPzAVlOGy/5uJGBQeQsRVXhIqgMc6nn3ItKdD7wbqGPhwGK6TcPqJalqw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\emrah\\source\\repos\\Asp.Net-Core-5-Identity\\Asp.Net-Core-Identity\\Asp.Net-Core-Identity.csproj",
+  "projectFilePath": "C:\\Users\\emrah\\source\\repos\\Identity\\Asp.Net-Core-5-Identity\\Asp.Net-Core-Identity\\Asp.Net-Core-Identity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\emrah\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\emrah\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
