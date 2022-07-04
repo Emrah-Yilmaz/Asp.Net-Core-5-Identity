@@ -14,5 +14,6 @@ namespace Asp.Net_Core_Identity.ViewModel
         [DataType(DataType.Password)]
         [MinLength(6, ErrorMessage ="Şifreniz en az 6 karakterden oluşmalıdır.")]
         public string Password { get; set; }
+        public bool RememberMe { get; set; }
     }
 }

@@ -32,6 +32,7 @@ namespace Asp.Net_Core_Identity
                 opts.UseSqlServer(configuration["ConnectionStrings:DefaultConnectionString"]);
             });
 
+            services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppIdentityDbContext>().AddErrorDescriber<CustomIdentityErrorDescriber>();
             CookieBuilder cookieBuilder = new();
             cookieBuilder.Name = "MyIdentityProject";
             cookieBuilder.HttpOnly = false;
@@ -47,7 +48,6 @@ namespace Asp.Net_Core_Identity
 
             });
 
-            services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppIdentityDbContext>().AddErrorDescriber<CustomIdentityErrorDescriber>();
             services.AddMvc(option => option.EnableEndpointRouting = false); 
         }
 
@@ -57,8 +57,8 @@ namespace Asp.Net_Core_Identity
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles();
-            app.UseMvcWithDefaultRoute();   
             app.UseAuthentication();
+            app.UseMvcWithDefaultRoute();   
         }
     }
 }
