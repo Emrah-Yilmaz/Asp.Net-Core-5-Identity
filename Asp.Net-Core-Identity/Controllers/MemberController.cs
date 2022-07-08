@@ -8,6 +8,7 @@ namespace Asp.Net_Core_Identity.Controllers
     {
         public IActionResult Index()
         {
+
             return View();
         }
     }

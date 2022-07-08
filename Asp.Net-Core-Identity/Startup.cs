@@ -32,7 +32,8 @@ namespace Asp.Net_Core_Identity
                 opts.UseSqlServer(configuration["ConnectionStrings:DefaultConnectionString"]);
             });
 
-            services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppIdentityDbContext>().AddErrorDescriber<CustomIdentityErrorDescriber>();
+            services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppIdentityDbContext>().AddErrorDescriber<CustomIdentityErrorDescriber>()
+                .AddDefaultTokenProviders();
             CookieBuilder cookieBuilder = new();
             cookieBuilder.Name = "MyIdentityProject";
             cookieBuilder.HttpOnly = false;

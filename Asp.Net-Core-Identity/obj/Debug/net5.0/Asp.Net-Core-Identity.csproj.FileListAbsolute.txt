@@ -291,3 +291,5 @@ C:\Users\emrah\source\repos\Identity\Asp.Net-Core-5-Identity\Asp.Net-Core-Identi
 C:\Users\emrah\source\repos\Identity\Asp.Net-Core-5-Identity\Asp.Net-Core-Identity\obj\Debug\net5.0\Razor\Views\Home\SignUp.cshtml.g.cs
 C:\Users\emrah\source\repos\Identity\Asp.Net-Core-5-Identity\Asp.Net-Core-Identity\obj\Debug\net5.0\Razor\Views\Home\Login.cshtml.g.cs
 C:\Users\emrah\source\repos\Identity\Asp.Net-Core-5-Identity\Asp.Net-Core-Identity\obj\Debug\net5.0\Razor\Views\Member\Index.cshtml.g.cs
+C:\Users\emrah\source\repos\Identity\Asp.Net-Core-5-Identity\Asp.Net-Core-Identity\obj\Debug\net5.0\Razor\Views\Home\ResetPassword.cshtml.g.cs
+C:\Users\emrah\source\repos\Identity\Asp.Net-Core-5-Identity\Asp.Net-Core-Identity\obj\Debug\net5.0\Razor\Views\Home\ResetPasswordConfirm.cshtml.g.cs

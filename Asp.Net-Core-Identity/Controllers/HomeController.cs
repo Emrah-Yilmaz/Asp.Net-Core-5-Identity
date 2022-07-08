@@ -115,5 +115,71 @@ namespace Asp.Net_Core_Identity.Controllers
             return View(signup);
 
         }
+        public IActionResult ResetPassword()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult ResetPassword(ResetPasswordViewModel resetPassword)
+        {
+            AppUser user = userManager.FindByEmailAsync(resetPassword.Email).Result;
+            if (user != null)
+            {
+                string passwordResetToken = userManager.GeneratePasswordResetTokenAsync(user).Result;
+                string passwordResetLink = Url.Action("ResetPasswordConfirm", "Home", new
+                {
+                    userId = user.Id,
+                    token = passwordResetToken
+                },HttpContext.Request.Scheme);
+
+                Helper.EmailConfirmation.SendEmail(passwordResetLink, user.Email);
+                ViewBag.status = "successfull";
+
+            }
+            else
+            {
+                ModelState.AddModelError("", "Mail Adresi Sistemde Kayıtlı Değildir.");
+            }
+
+            return View(resetPassword);
+        }
+        public IActionResult ResetPasswordConfirm(string userId, string token)
+        {
+            TempData["userId"] = userId;
+            TempData["token"] = token;
+
+            return View();
+        }
+        [HttpPost]
+        public  async Task<IActionResult> ResetPasswordConfirm(PasswordConfirmViewModel passwordConfirm)
+        {
+            string userId = TempData["userId"].ToString();
+            string token = TempData["token"].ToString();
+
+            AppUser user = await userManager.FindByIdAsync(userId);
+            if (user!=null)
+            {
+                IdentityResult result = await userManager.ResetPasswordAsync(user, token, passwordConfirm.Password);
+                if (result.Succeeded)
+                {
+                    await userManager.UpdateSecurityStampAsync(user);
+                    TempData["passwordResetInfo"] = "Şifreniz başarıyla değiştirilmiştir. Yeni şifreniz ile giriş yapabilirsiniz.";
+                    ViewBag.status = "success";
+                }
+                else
+                {
+                    foreach (var item in result.Errors)
+                    {
+                        ModelState.AddModelError("", item.Description);
+                    }
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("", "Bir hata oluştu. Lütfen daha sonra tekrar deneyiniz.");
+            }
+
+            return View();
+        }
     }
 }
