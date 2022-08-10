@@ -3,24 +3,51 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Asp.Net_Core_Identity.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Asp.Net_Core_Identity.CustomValidation;
+using System.Reflection;
 
-namespace Asp.Net_Core_Identity
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<AppIdentityDbContext>(x =>
 {
-    public class Program
+    x.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString"), option =>
     {
-        public static void Main(string[] args)
-        {
-            CreateHostBuilder(args).Build().Run();
-        }
+        option.MigrationsAssembly(Assembly.GetAssembly(typeof(AppIdentityDbContext)).GetName().Name);
+    });
+});
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
-    }
-}
+
+builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppIdentityDbContext>().AddErrorDescriber<CustomIdentityErrorDescriber>()
+    .AddDefaultTokenProviders();
+CookieBuilder cookieBuilder = new();
+cookieBuilder.Name = "MyIdentityProject";
+cookieBuilder.HttpOnly = false;
+cookieBuilder.SameSite = SameSiteMode.Lax;
+cookieBuilder.SecurePolicy = CookieSecurePolicy.SameAsRequest;
+
+builder.Services.ConfigureApplicationCookie(opts =>
+{
+    opts.LoginPath = new PathString("/Home/Login/");
+    opts.Cookie = cookieBuilder;
+    opts.SlidingExpiration = true;
+    opts.ExpireTimeSpan = TimeSpan.FromDays(7);
+
+});
+
+builder.Services.AddMvc(option => option.EnableEndpointRouting = false);
+
+var app = builder.Build();
+
+app.UseDeveloperExceptionPage();
+app.UseStatusCodePages();
+app.UseStaticFiles();
+app.UseAuthentication();
+app.UseMvcWithDefaultRoute();
+
+app.Run();
+
