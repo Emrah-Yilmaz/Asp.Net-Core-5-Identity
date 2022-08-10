@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "5SS/oeuT+gq5mP763qmnes6pzB5ZAlPzAVlOGy/5uJGBQeQsRVXhIqgMc6nn3ItKdD7wbqGPhwGK6TcPqJalqw==",
+  "dgSpecHash": "YP1rCEFnUqZYnPzQbA4LMnl8tBjbXp0Du4grLp6/JLAz318i/+tAeMW8J0GYc7TIik/H5Y8RNVzJJNRC2Rc3xg==",
   "success": true,
   "projectFilePath": "C:\\Users\\emrah\\source\\repos\\Identity\\Asp.Net-Core-5-Identity\\Asp.Net-Core-Identity\\Asp.Net-Core-Identity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\emrah\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\emrah\\.nuget\\packages\\mapster\\7.3.0\\mapster.7.3.0.nupkg.sha512",
+    "C:\\Users\\emrah\\.nuget\\packages\\mapster.core\\1.2.0\\mapster.core.1.2.0.nupkg.sha512",
     "C:\\Users\\emrah\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\emrah\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
     "C:\\Users\\emrah\\.nuget\\packages\\microsoft.aspnetcore.authentication.facebook\\5.0.17\\microsoft.aspnetcore.authentication.facebook.5.0.17.nupkg.sha512",
