@@ -109,5 +109,10 @@ namespace Asp.Net_Core_Identity.Controllers
             _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
+        public IActionResult AccessDenied()
+        {
+
+            return View();
+        }
     }
 }

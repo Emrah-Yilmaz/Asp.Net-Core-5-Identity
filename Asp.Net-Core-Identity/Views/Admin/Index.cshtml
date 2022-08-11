@@ -1,37 +1,6 @@
-﻿@model List<Asp.Net_Core_Identity.Models.AppUser>
-
-@{
+﻿@{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
 }
 
-<table class="table table-hover container">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Username</th>
-            <th scope="col">Email</th>
-        </tr>
-    </thead>
-    <tbody>
-        @if (Model.Count==0)
-        {
-            <tr>
-                <td colspan="3">Hiç bir üye kaydı yoktur.</td>
-            </tr>
-        }
-
-        @foreach (var item in Model)
-       {
-            <tr>
-            <td>@item.Id</td>
-            <td>@item.UserName</td>
-            <td>@item.Email</td>
-        </tr>
-       }
-       
-
-
-    </tbody>
-</table>
-
+<h2>Admin sayfasına hoş geldiniz....</h2>

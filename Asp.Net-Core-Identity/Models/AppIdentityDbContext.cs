@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Asp.Net_Core_Identity.Models
 {
-    public class AppIdentityDbContext : IdentityDbContext<AppUser>
+    public class AppIdentityDbContext : IdentityDbContext<AppUser, AppRole, string>
     {
         public AppIdentityDbContext(DbContextOptions<AppIdentityDbContext> options):base(options)
         {

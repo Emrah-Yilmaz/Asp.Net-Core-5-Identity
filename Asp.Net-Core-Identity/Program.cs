@@ -22,7 +22,7 @@ builder.Services.AddDbContext<AppIdentityDbContext>(x =>
 });
 
 
-builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppIdentityDbContext>().AddErrorDescriber<CustomIdentityErrorDescriber>()
+builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<AppIdentityDbContext>().AddErrorDescriber<CustomIdentityErrorDescriber>()
     .AddDefaultTokenProviders();
 CookieBuilder cookieBuilder = new();
 cookieBuilder.Name = "MyIdentityProject";
@@ -36,8 +36,10 @@ builder.Services.ConfigureApplicationCookie(opts =>
     opts.Cookie = cookieBuilder;
     opts.SlidingExpiration = true;
     opts.ExpireTimeSpan = TimeSpan.FromDays(7);
+    opts.AccessDeniedPath = new PathString("/Member/AccesDenied/");
 
 });
+
 
 builder.Services.AddMvc(option => option.EnableEndpointRouting = false);
 
